@@ -5,6 +5,7 @@ const geoCode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
 const app = express()
+const port = process.env.PORT || 3000   // port equal to first value if it exists else its equal to 3000
 
 // console.log(__dirname)
 // console.log(__filename)
@@ -125,6 +126,8 @@ app.get('*', (req, res) => {
     // res.send("my 404 page")
 })
 
-app.listen(3000, () => {    // the process of starting a server is sync or async. i dont know ask.
-    console.log('Server is up on port 3000')
+
+
+app.listen(port, () => {    // the process of starting a server is sync or async. i dont know ask.
+    console.log('Server is up on port ' + port)
 })
